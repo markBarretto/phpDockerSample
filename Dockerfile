@@ -1,6 +1,6 @@
 FROM ubuntu
-RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get update -y
+RUN apt-get upgrade -y
 RUN apt-get install -y apache2
 RUN apt-get install php5 libapache2-mod-php5 php5-mcrypt php5-mysql
 
