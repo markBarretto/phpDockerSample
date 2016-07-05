@@ -8,6 +8,9 @@ RUN apt-get upgrade -y
 RUN apt-get install -y apache2
 #RUN apt-get install php5 libapache2-mod-php5 php5-mcrypt php5-mysql
 RUN apt-get install -y php5.5
+RUN apt-get install -y libapache2-mod-php5 
+RUN apt-get install -y php5-mcrypt 
+RUN apt-get install -y php5-mysql
 
 RUN mkdir /www
 RUN mkdir /var/www
