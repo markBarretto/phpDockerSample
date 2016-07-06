@@ -19,7 +19,7 @@ RUN chown www-data:www-data -R /var/www
 
 #COPY php.ini /usr/local/etc/php/php.ini
 
-COPY apache-config.conf /etc/apache2/sites-available/000-default.conf
+COPY apache-config.conf /etc/apache2/sites-enabled/apache-config.conf
 
 EXPOSE 80
-RUN ["apache2ctl","-D","FOREGROUND"]
+CMD ["apache2ctl","-D","FOREGROUND"]
