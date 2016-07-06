@@ -13,6 +13,8 @@ RUN mkdir /www
 ADD . /www
 WORKDIR /www
 
+COPY www /var/www
+
 RUN chown www-data:www-data -R /www
 RUN chown www-data:www-data -R /var/www
 
