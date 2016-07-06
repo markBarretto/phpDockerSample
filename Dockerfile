@@ -1,4 +1,5 @@
 FROM ubuntu:14.04
+
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install -y apache2
@@ -13,15 +14,16 @@ RUN mkdir /www
 ADD . /www
 WORKDIR /www
 
-COPY www /var/www
+RUN rm /var/www/html/*
+COPY www /var/www/html
 
 RUN chown www-data:www-data -R /www
 RUN chown www-data:www-data -R /var/www
-
 
 #COPY php.ini /usr/local/etc/php/php.ini
 
 COPY apache-config.conf /etc/apache2/sites-enabled/apache-config.conf
 
 EXPOSE 80
+
 CMD ["apache2ctl","-D","FOREGROUND"]
